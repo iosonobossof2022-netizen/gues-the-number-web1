@@ -12,7 +12,7 @@ def index():
     feedback = ""
 
     if request.method == "POST":
-        user_input = request.form.get("gok").strip().lower()
+        user_input = request.form.get("guess").strip().lower()
 
         if user_input == "stop":
             feedback = f"You stopped the game. The number was {random_num}."
