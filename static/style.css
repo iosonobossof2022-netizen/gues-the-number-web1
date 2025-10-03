@@ -1,68 +1,45 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #111;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
   margin: 0;
+  padding: 0;
 }
 
 #game-container {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
   text-align: center;
-  width: 320px;
 }
 
-h1 {
-  color: #334e68;
+.pixel-text {
+  font-size: 24px;
   margin-bottom: 20px;
-}
-
-p {
-  font-size: 16px;
-  color: #334e68;
-  margin: 10px 0;
 }
 
 input[type="text"] {
   padding: 10px;
   font-size: 16px;
   width: 80%;
-  border: 2px solid #bcccdc;
-  border-radius: 8px;
   margin-bottom: 10px;
+  border: 2px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
 }
 
-button {
+button, .reset-button {
+  display: inline-block;
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #3e7cb1;
+  background-color: #ff4444;
   color: white;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
+  margin-top: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #2a6f97;
-}
-
-.feedback {
-  font-weight: bold;
-  color: #102a43;
-  margin-top: 15px;
-}
-
-.reset-button {
-  margin-top: 15px;
-  background-color: #627d98;
-}
-
-.reset-button:hover {
-  background-color: #486581;
 }

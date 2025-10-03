@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Over</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="game-container">
+        <h1 class="pixel-text">💀 GAME OVER</h1>
+        <p>You ran out of lives after <strong>{{ turns }}</strong> turns.</p>
+        <p>The number was <strong>{{ number }}</strong>.</p>
+
+        <a href="/reset" class="reset-button">🔄 Play Again</a>
+    </div>
+</body>
+</html>

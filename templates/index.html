@@ -7,17 +7,18 @@
 </head>
 <body>
     <div id="game-container">
-        <h1>Guess the Number</h1>
-        <p>Type a number between 1 and 100. You have <strong>{{ lives }}</strong> lives left.</p>
+        <h1 class="pixel-text">🎯 GUESS THE NUMBER</h1>
+        <p>{{ feedback }}</p>
+
         <form method="POST">
-            <input type="text" name="guess" placeholder="Number or 'stop'" required>
+            <input type="text" name="guess" placeholder="Enter a number or 'stop'" autofocus>
             <button type="submit">Submit</button>
         </form>
-        <p class="feedback">{{ feedback }}</p>
+
+        <p>Lives left: <strong>{{ lives }}</strong></p>
         <p>Turns taken: <strong>{{ turns }}</strong></p>
-        <form action="/reset" method="GET">
-            <button type="submit" class="reset-button">Reset Game</button>
-        </form>
+
+        <a href="/reset" class="reset-button">🔄 Reset</a>
     </div>
 </body>
 </html>
