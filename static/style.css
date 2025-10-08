@@ -32,17 +32,25 @@ input[type="text"] {
   color: #fff;
 }
 
-button, .reset-button {
+button, .reset-button, .retry-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ff4444;
-  color: white;
   font-family: 'Press Start 2P', cursive;
   text-decoration: none;
   border: none;
   border-radius: 5px;
-  margin-top: 20px;
+  margin: 10px 5px;
   cursor: pointer;
+}
+
+.reset-button {
+  background-color: #ff4444;
+  color: white;
+}
+
+.retry-button {
+  background-color: #44ff44;
+  color: white;
 }
 
 #lives-display {

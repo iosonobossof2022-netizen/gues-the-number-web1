@@ -59,6 +59,13 @@ def game_over():
     lives = session.get('lives', 0)
     return render_template("game_over.html", number=number, turns=turns, lives=lives)
 
+@app.route("/retry")
+def retry():
+    session['random_num'] = random.randint(1, 100)
+    session['lives'] = 3
+    # Keep session['turns']
+    return redirect("/")
+
 @app.route("/reset")
 def reset():
     reset_game()
