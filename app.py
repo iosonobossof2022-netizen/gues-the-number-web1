@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, session, redirect
 import random
 
 app = Flask(__name__)
-app.secret_key = 'my_25fapp'
+app.secret_key = 'your_secret_key_here'
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -32,8 +32,7 @@ def index():
                 session['turns'] += 1
 
                 if user_num == session['random_num']:
-                    feedback = f"🎉 Correct! You guessed it in {session['turns']} turns."
-                    reset_game()
+                    return redirect("/win")
                 elif user_num > session['random_num']:
                     feedback = "📈 Too high!"
                     session['lives'] -= 1
@@ -45,6 +44,12 @@ def index():
                     return redirect("/game-over")
 
     return render_template("index.html", feedback=feedback, lives=session['lives'], turns=session['turns'])
+
+@app.route("/win")
+def win():
+    turns = session.get('turns', 0)
+    number = session.get('random_num', '?')
+    return render_template("win.html", turns=turns, number=number)
 
 @app.route("/game-over")
 def game_over():

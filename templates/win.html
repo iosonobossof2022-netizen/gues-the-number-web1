@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>You Win!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="game-container">
+        <h1 class="pixel-text">🎉 YOU WIN!</h1>
+        <p>You guessed the number <strong>{{ number }}</strong> in <strong>{{ turns }}</strong> turns.</p>
+
+        <a href="/reset" class="reset-button">🔁 Play Again</a>
+    </div>
+</body>
+</html>
