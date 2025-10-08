@@ -7,6 +7,8 @@
 </head>
 <body>
     <div id="game-container">
+        {% include '_lives_display.html' %}
+
         <h1 class="pixel-text">🎉 YOU WIN!</h1>
         <p>You guessed the number <strong>{{ number }}</strong> in <strong>{{ turns }}</strong> turns.</p>
 

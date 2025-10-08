@@ -13,6 +13,7 @@ body {
   background-color: #222;
   border-radius: 10px;
   text-align: center;
+  position: relative;
 }
 
 .pixel-text {
@@ -42,4 +43,24 @@ button, .reset-button {
   border-radius: 5px;
   margin-top: 20px;
   cursor: pointer;
+}
+
+#lives-display {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 1px 1px #000;
+  z-index: 10;
+}
+
+.heart {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.count {
+  font-size: 20px;
 }

@@ -7,6 +7,8 @@
 </head>
 <body>
     <div id="game-container">
+        {% include '_lives_display.html' %}
+
         <h1 class="pixel-text">💀 GAME OVER</h1>
         <p>You ran out of lives after <strong>{{ turns }}</strong> turns.</p>
         <p>The number was <strong>{{ number }}</strong>.</p>

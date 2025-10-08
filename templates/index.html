@@ -7,6 +7,8 @@
 </head>
 <body>
     <div id="game-container">
+        {% include '_lives_display.html' %}
+
         <h1 class="pixel-text">🎯 GUESS THE NUMBER</h1>
         <p>{{ feedback }}</p>
 
@@ -15,9 +17,7 @@
             <button type="submit">Submit</button>
         </form>
 
-        <p>Lives left: <strong>{{ lives }}</strong></p>
         <p>Turns taken: <strong>{{ turns }}</strong></p>
-
         <a href="/reset" class="reset-button">🔄 Reset</a>
     </div>
 </body>

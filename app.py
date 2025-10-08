@@ -49,13 +49,15 @@ def index():
 def win():
     turns = session.get('turns', 0)
     number = session.get('random_num', '?')
-    return render_template("win.html", turns=turns, number=number)
+    lives = session.get('lives', 0)
+    return render_template("win.html", turns=turns, number=number, lives=lives)
 
 @app.route("/game-over")
 def game_over():
     number = session.get('random_num', '?')
     turns = session.get('turns', 0)
-    return render_template("game_over.html", number=number, turns=turns)
+    lives = session.get('lives', 0)
+    return render_template("game_over.html", number=number, turns=turns, lives=lives)
 
 @app.route("/reset")
 def reset():
