@@ -1,6 +1,6 @@
 body {
   background-color: #111;
-  color: #fff;
+  color: #ffffff;
   font-family: 'Press Start 2P', cursive;
   margin: 0;
   padding: 0;
@@ -42,6 +42,10 @@ button, .reset-button, .retry-button {
   margin: 10px 5px;
   cursor: pointer;
 }
+button[type="submit"] {
+  background-color: #ff4444;
+  color: white;
+}
 
 .reset-button {
   background-color: #ff4444;
@@ -71,4 +75,11 @@ button, .reset-button, .retry-button {
 
 .count {
   font-size: 20px;
+}
+
+.hint {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 10px;
+  font-family: 'Press Start 2P', cursive;
 }

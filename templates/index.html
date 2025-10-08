@@ -9,8 +9,9 @@
     <div id="game-container">
         {% include '_lives_display.html' %}
 
-        <h1 class="pixel-text">🎯 GUESS THE NUMBER</h1>
-        <p>{{ feedback }}</p>
+<h1 class="pixel-text">🎯 GUESS THE NUMBER</h1>
+<p class="hint">The number must be between <strong>1</strong> and <strong>100</strong>.</p>
+<p>{{ feedback }}</p>
 
         <form method="POST">
             <input type="text" name="guess" placeholder="Enter a number or 'stop'" autofocus>
