@@ -8,7 +8,7 @@ app.secret_key = 'your_secret_key_here'
 def index():
     if 'random_num' not in session:
         session['random_num'] = random.randint(1, 100)
-        session['lives'] = 3
+        session['lives'] = 10
         session['turns'] = 0
 
     feedback = ""
@@ -32,6 +32,7 @@ def index():
                 session['turns'] += 1
 
                 if user_num == session['random_num']:
+                    session['won'] = True
                     return redirect("/win")
                 elif user_num > session['random_num']:
                     feedback = "📈 Too high!"
@@ -41,12 +42,16 @@ def index():
                     session['lives'] -= 1
 
                 if session['lives'] == 0:
+                    session['lost'] = True
                     return redirect("/game-over")
 
     return render_template("index.html", feedback=feedback, lives=session['lives'], turns=session['turns'])
 
 @app.route("/win")
 def win():
+    if not session.get('won'):
+        return redirect("/")
+    session.pop('won', None)
     turns = session.get('turns', 0)
     number = session.get('random_num', '?')
     lives = session.get('lives', 0)
@@ -54,6 +59,9 @@ def win():
 
 @app.route("/game-over")
 def game_over():
+    if not session.get('lost'):
+        return redirect("/")
+    session.pop('lost', None)
     number = session.get('random_num', '?')
     turns = session.get('turns', 0)
     lives = session.get('lives', 0)
@@ -62,8 +70,9 @@ def game_over():
 @app.route("/retry")
 def retry():
     session['random_num'] = random.randint(1, 100)
-    session['lives'] = 3
-    # Keep session['turns']
+    session['lives'] = 10
+    session.pop('won', None)
+    session.pop('lost', None)
     return redirect("/")
 
 @app.route("/reset")
@@ -73,8 +82,10 @@ def reset():
 
 def reset_game():
     session['random_num'] = random.randint(1, 100)
-    session['lives'] = 3
+    session['lives'] = 10
     session['turns'] = 0
+    session.pop('won', None)
+    session.pop('lost', None)
 
 if __name__ == "__main__":
     app.run(debug=True)

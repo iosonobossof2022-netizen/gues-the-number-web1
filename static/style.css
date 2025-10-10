@@ -48,12 +48,13 @@ button[type="submit"] {
 }
 
 .reset-button {
-  background-color: #ff4444;
+  background-color: #ff4444; 
   color: white;
 }
 
 .retry-button {
   background-color: #44ff44;
+  
   color: white;
 }
 
