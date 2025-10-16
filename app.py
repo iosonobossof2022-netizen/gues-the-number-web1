@@ -87,5 +87,12 @@ def reset_game():
     session.pop('won', None)
     session.pop('lost', None)
 
+@app.route("/buy-lives", methods=["GET", "POST"])
+def buy_lives():
+    if request.method == "POST":
+        session['lives'] = session.get('lives', 0) + 3
+        return redirect("/")
+    return render_template("buy_lives.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
